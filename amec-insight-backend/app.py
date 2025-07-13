@@ -19,7 +19,7 @@ def login():
     if username in users and users[username] == password:
         return jsonify({
             'success': True,
-            'token': 'fake-token'
+            'token': 'fake-jwt-token'
         })
     else:
         return jsonify({
@@ -37,6 +37,8 @@ def get_equipment():
     ]
     return jsonify(data)
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5001)
+#if __name__ == '__main__':
+#    app.run(debug=True, host='0.0.0.0', port=5000)
 
+if __name__ == '__main__':
+    app.run(debug=True, port=5001)
